@@ -45,3 +45,9 @@ void notify::epolling()
 
 
 }
+
+std::string notify::GetFileName()
+{
+
+return FileName;
+}

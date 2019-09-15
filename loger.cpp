@@ -6,11 +6,10 @@
 #include <streambuf>
 
 
-log_loger::log_loger(std::string FileName, std::string Path)
+log_loger::log_loger(std::string FileName)
 {
  LogFileName=FileName;
- LogFilePath=Path;
- LogFile.open(LogFilePath+LogFileName, std::ifstream::in);
+ LogFile.open(LogFileName, std::ifstream::in);
 }
 
 log_loger::~log_loger()
@@ -69,4 +68,10 @@ std::string log_loger::EraseOldContent(std::string& ActualData, const std::strin
   temporary.erase(position,OldContent.length());
   }
  return temporary;
+}
+
+std::string log_loger::GetFileName()
+{
+
+return LogFileName;
 }

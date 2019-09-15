@@ -1,11 +1,12 @@
 #ifndef NOTIFICATION
-#define NOTIFICATIOn
+#define NOTIFICATION
 #include <iostream>
 #include <string>
 #include <limits.h>
 #include <functional>
 #include <sys/inotify.h>
 #include <sys/epoll.h>
+
 
 
 #define BUF_LEN (10 * (sizeof (struct inotify_event) + NAME_MAX +1))
@@ -26,6 +27,7 @@ class notify
 	~notify();
 	void RegisterCallback(std::function<void()> func);
 	void epolling();
+   std::string GetFileName();
 
 
 };

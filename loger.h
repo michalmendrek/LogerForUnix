@@ -11,17 +11,17 @@ class log_loger
 	std::string   LogFileName;
 	std::string   LogContent;
 	std::string   LogContentOld;
-	std::string   LogFilePath;
 	std::ifstream LogFile;
 	std::string   EraseOldContent(std::string&  ActualData, const std::string& OldContent);
  public:
 
-	         log_loger(std::string FileName, std::string Path);
+	         log_loger(std::string FileName);
 	        ~log_loger();
      std::string ReadNewData();
      std::string ReadLog();
 	  void   UpdateData();
           void   ReadWholeLog();
+     std::string GetFileName();
 
 };
 
